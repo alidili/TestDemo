@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:orientation="vertical">
+
+    <com.yang.testdemo.widget.CustomVolumControlBar
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        app:bg="@mipmap/ic_launcher"
+        app:circleWidth="12dp"
+        app:dotCount="20"
+        app:firstColor="#252420"
+        app:secondColor="#FDFDFD"
+        app:splitSize="25" />
+
+</LinearLayout>

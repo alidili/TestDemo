@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yang.testdemo.widget.ColorTrackView
+        android:id="@+id/id_changeTextColorView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        app:progress="0"
+        app:text="冥道残月破"
+        app:text_change_color="#ffff0000"
+        app:text_origin_color="#ff000000"
+        app:text_size="60sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startLeftChange"
+            android:text="StartLeft" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/id_left"
+            android:onClick="startRightChange"
+            android:text="StartRight" />
+
+    </LinearLayout>
+
+</RelativeLayout>
