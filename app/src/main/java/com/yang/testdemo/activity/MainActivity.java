@@ -2,14 +2,10 @@ package com.yang.testdemo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.widget.TextView;
 
 import com.yang.testdemo.R;
-import com.yang.testdemo.utils.StringUtils;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -17,9 +13,6 @@ import butterknife.OnClick;
  * Created by yangle on 2016/3/28.
  */
 public class MainActivity extends BaseActivity {
-
-    @Bind(R.id.text)
-    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
