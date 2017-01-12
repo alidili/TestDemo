@@ -115,6 +115,10 @@
             android:name=".activity.PullToRefreshActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.RecyclerViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>
