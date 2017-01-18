@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.button)
     public void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this, ImageButtonActivity.class);
+        Intent intent = new Intent(MainActivity.this, CircleProgressBarActivity.class);
         startActivity(intent);
     }
 }
