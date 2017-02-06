@@ -131,6 +131,10 @@
             android:name=".activity.CircleProgressBarActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.JDIndexActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>
