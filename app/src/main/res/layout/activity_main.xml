@@ -1,14 +1,239 @@
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/color_2F9DD2"
-        android:text="点击进入"
-        android:textColor="@color/color_FFFFFF" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
 
-</merge>
+        <Button
+            android:id="@+id/btn_support_library"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="SupportLibrary"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_circle_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="CircleProgress"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_color_track_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ColorTrackView"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_coordinator_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="CoordinatorLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_custom_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="CustomImage"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_custom_img_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="CustomImgContainer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_custom_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="CustomProgressBar"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_custom_volum_control_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="CustomVolumControlBar"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_drawer_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="DrawerMenu"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_event_bus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="EventBus"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Gallery"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_image_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ImageButton"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_jd_index"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="JDIndex"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_layout_transition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="LayoutTransition"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_ok_http"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="OkHttp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_panel_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="PanelLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_property_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="PropertyAnimation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_pull_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="PullToRefresh"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="RecyclerView"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_rx_android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="RxAndroid"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_rx_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="RxMore"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_scroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Scroller"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_snack_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Snackbar"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_svg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="SVG"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TabLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_vdh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="VDHLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_volley"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Volley"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_we_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="WeChat"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</ScrollView>
