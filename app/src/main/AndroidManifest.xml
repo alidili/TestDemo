@@ -139,6 +139,10 @@
             android:name=".activity.LayoutTransitionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.SwipeToLoadLayoutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>

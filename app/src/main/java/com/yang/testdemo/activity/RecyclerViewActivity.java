@@ -95,7 +95,7 @@ public class RecyclerViewActivity extends BaseActivity {
 
             public RecyclerViewHolder(View view) {
                 super(view);
-                tvItem = (TextView) findViewById(R.id.tv_item);
+                tvItem = (TextView) view.findViewById(R.id.tv_item);
             }
         }
     }
