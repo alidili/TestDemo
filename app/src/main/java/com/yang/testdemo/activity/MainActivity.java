@@ -22,7 +22,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_swipe_to_load_layout,
+    @OnClick({R.id.btn_screen_test, R.id.btn_swipe_to_load_layout,
             R.id.btn_support_library, R.id.btn_circle_progress_bar, R.id.btn_color_track_view,
             R.id.btn_coordinator_layout, R.id.btn_custom_image, R.id.btn_custom_img_container,
             R.id.btn_custom_progress_bar, R.id.btn_custom_volum_control_bar, R.id.btn_drawer_menu,
@@ -35,6 +35,10 @@ public class MainActivity extends BaseActivity {
         Intent intent = null;
 
         switch (view.getId()) {
+            case R.id.btn_screen_test:
+                intent = new Intent(this, ScreenTestActivity.class);
+                break;
+
             case R.id.btn_swipe_to_load_layout:
                 intent = new Intent(this, SwipeToLoadLayoutActivity.class);
                 break;

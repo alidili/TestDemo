@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F1F5">
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="66dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/task_btn_back_selector" />
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="680dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/btn_back"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/btn_back"
+        android:background="@drawable/bg_fff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/task_icon_search" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="12dp"
+            android:background="#D1D1D1" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入关键字"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="#777"
+            android:textColorHint="#DFDFDF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_screen"
+        android:layout_width="66dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/btn_back"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/ll_search"
+        android:background="@drawable/task_btn_screen_selector" />
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/btn_back"
+        android:layout_marginBottom="34dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="34dp"
+        android:layout_toRightOf="@+id/btn_screen"
+        android:background="@drawable/bg_fff"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="30dp"
+            android:background="@mipmap/task_icon_weather"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="星期二"
+                android:textColor="#757575"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textColor="#4A4A4A"
+                android:textSize="80sp" />
+
+            <View
+                android:layout_width="134dp"
+                android:layout_height="1dp"
+                android:background="#BDBDBD" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="MAY    2017"
+                android:textColor="#4A4A4A"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="33dp"
+            android:background="#E0E0E0" />
+
+        <TextView
+            android:layout_width="126dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/bg_a0da67"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="#A1DA67"
+            android:textSize="48sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="已完成任务"
+            android:textColor="#9ED468" />
+
+        <TextView
+            android:layout_width="126dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_7dafe9"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="#89C0FF"
+            android:textSize="48sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="待完成任务"
+            android:textColor="#7DB0EA" />
+
+    </LinearLayout>
+
+</RelativeLayout>
