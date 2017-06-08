@@ -115,6 +115,9 @@
         <activity
             android:name=".activity.CreditScoreActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.StartAppActivity"
+            android:screenOrientation="portrait" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>
