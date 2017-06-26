@@ -3,9 +3,12 @@ package com.yang.testdemo.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.yang.testdemo.R;
 import com.yang.testdemo.support_library.SupportLibraryMainActivity;
+import com.yang.testdemo.utils.FloatWindowUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -22,7 +25,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_handler, R.id.btn_start_app,
+    @OnClick({R.id.btn_float_window, R.id.btn_handler, R.id.btn_start_app,
             R.id.btn_credit_score, R.id.btn_screen_test, R.id.btn_swipe_to_load_layout,
             R.id.btn_support_library, R.id.btn_circle_progress_bar, R.id.btn_color_track_view,
             R.id.btn_coordinator_layout, R.id.btn_custom_image, R.id.btn_custom_img_container,
@@ -36,6 +39,10 @@ public class MainActivity extends BaseActivity {
         Intent intent = null;
 
         switch (view.getId()) {
+            case R.id.btn_float_window:
+                FloatWindowUtils.showFloatWindow(this);
+                break;
+
             case R.id.btn_handler:
                 intent = new Intent(this, HandlerActivity.class);
                 break;
@@ -175,5 +182,11 @@ public class MainActivity extends BaseActivity {
         if (intent != null) {
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FloatWindowUtils.removeFloatWindow();
     }
 }

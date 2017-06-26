@@ -10,6 +10,14 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_float_window"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="FloatWindow"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/btn_handler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
