@@ -1,14 +1,20 @@
 package com.yang.testdemo.activity;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.yang.testdemo.R;
 import com.yang.testdemo.support_library.SupportLibraryMainActivity;
 import com.yang.testdemo.utils.FloatWindowUtils;
+import com.yl.aidldemo.AIDLService;
+import com.yl.aidldemo.CallBack;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -18,6 +24,8 @@ import butterknife.OnClick;
  */
 public class MainActivity extends BaseActivity {
 
+    private final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +33,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_float_window, R.id.btn_handler, R.id.btn_start_app,
+    @OnClick({R.id.btn_aidl, R.id.btn_float_window, R.id.btn_handler, R.id.btn_start_app,
             R.id.btn_credit_score, R.id.btn_screen_test, R.id.btn_swipe_to_load_layout,
             R.id.btn_support_library, R.id.btn_circle_progress_bar, R.id.btn_color_track_view,
             R.id.btn_coordinator_layout, R.id.btn_custom_image, R.id.btn_custom_img_container,
@@ -39,6 +47,12 @@ public class MainActivity extends BaseActivity {
         Intent intent = null;
 
         switch (view.getId()) {
+            case R.id.btn_aidl:
+                Intent serviceIntent = new Intent("android.intent.action.AIDLTestService");
+                serviceIntent.setPackage("com.yl.aidldemo");
+                bindService(serviceIntent, connection, Context.BIND_AUTO_CREATE);
+                break;
+
             case R.id.btn_float_window:
                 FloatWindowUtils.showFloatWindow(this);
                 break;
@@ -183,6 +197,30 @@ public class MainActivity extends BaseActivity {
             startActivity(intent);
         }
     }
+
+    private ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.i(TAG, "服务已连接");
+            AIDLService aidlService = AIDLService.Stub.asInterface(service);
+
+            try {
+                aidlService.registerCallBack(new CallBack.Stub() {
+                    @Override
+                    public void progress(String progress) throws RemoteException {
+                        Log.i(TAG, "当前进度：" + progress);
+                    }
+                });
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            Log.i(TAG, "服务已断开");
+        }
+    };
 
     @Override
     protected void onDestroy() {
