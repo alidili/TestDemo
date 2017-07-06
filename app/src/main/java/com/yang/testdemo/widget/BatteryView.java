@@ -53,7 +53,7 @@ public class BatteryView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         width = w;
         height = h;
-        srcRect = new Rect(0, 0, width, height);
+        srcRect = new Rect(0, 0, batteryBitmap.getWidth(), batteryBitmap.getHeight());
         dstRect = new Rect(0, 0, width, height);
     }
 
