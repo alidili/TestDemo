@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
 
     <application
         android:name=".TestDemoApplication"
@@ -17,7 +18,6 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,111 +26,48 @@
                 <category android:name="android.intent.category.DEFAULT" />-->
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.GalleryActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.PanelLayoutActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.DrawerMenuActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.CustomImageActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.CustomProgressBarActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.CustomVolumControlBarActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.CustomImgContainerActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.VDHLayoutActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.ColorTrackViewActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.PropertyAnimationActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.RxAndroidActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.VolleyActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.RxMoreActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.EventBusActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.OkHttpActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.TabLayoutActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".support_library.SupportLibraryMainActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".support_library.SubActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.CoordinatorLayoutActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.WeChatActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.SnackbarActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.ScrollerActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.PullToRefreshActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.RecyclerViewActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.ImageButtonActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.SVGActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.CircleProgressBarActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.JDIndexActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.LayoutTransitionActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".activity.GalleryActivity" />
+        <activity android:name=".activity.PanelLayoutActivity" />
+        <activity android:name=".activity.DrawerMenuActivity" />
+        <activity android:name=".activity.CustomImageActivity" />
+        <activity android:name=".activity.CustomProgressBarActivity" />
+        <activity android:name=".activity.CustomVolumControlBarActivity" />
+        <activity android:name=".activity.CustomImgContainerActivity" />
+        <activity android:name=".activity.VDHLayoutActivity" />
+        <activity android:name=".activity.ColorTrackViewActivity" />
+        <activity android:name=".activity.PropertyAnimationActivity" />
+        <activity android:name=".activity.RxAndroidActivity" />
+        <activity android:name=".activity.VolleyActivity" />
+        <activity android:name=".activity.RxMoreActivity" />
+        <activity android:name=".activity.EventBusActivity" />
+        <activity android:name=".activity.OkHttpActivity" />
+        <activity android:name=".activity.TabLayoutActivity" />
+        <activity android:name=".support_library.SupportLibraryMainActivity" />
+        <activity android:name=".support_library.SubActivity" />
+        <activity android:name=".activity.CoordinatorLayoutActivity" />
+        <activity android:name=".activity.WeChatActivity" />
+        <activity android:name=".activity.SnackbarActivity" />
+        <activity android:name=".activity.ScrollerActivity" />
+        <activity android:name=".activity.PullToRefreshActivity" />
+        <activity android:name=".activity.RecyclerViewActivity" />
+        <activity android:name=".activity.ImageButtonActivity" />
+        <activity android:name=".activity.SVGActivity" />
+        <activity android:name=".activity.CircleProgressBarActivity" />
+        <activity android:name=".activity.JDIndexActivity" />
+        <activity android:name=".activity.LayoutTransitionActivity" />
         <activity android:name=".activity.SwipeToLoadLayoutActivity" />
         <activity android:name=".activity.ScreenTestActivity" />
-        <activity
-            android:name=".activity.CreditScoreActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.StartAppActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.HandlerActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".activity.CreditScoreActivity" />
+        <activity android:name=".activity.StartAppActivity" />
+        <activity android:name=".activity.HandlerActivity" />
+        <activity android:name=".activity.BatteryActivity" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
-        </receiver><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        </receiver>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

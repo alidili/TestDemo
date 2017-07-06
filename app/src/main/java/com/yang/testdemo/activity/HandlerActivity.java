@@ -1,5 +1,6 @@
 package com.yang.testdemo.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,7 +19,7 @@ import butterknife.ButterKnife;
  * Created by yangle on 2017/6/12.
  */
 
-public class HandlerActivity extends BaseActivity {
+public class HandlerActivity extends Activity {
 
     @Bind(R.id.tv_handler)
     TextView tvHandler;

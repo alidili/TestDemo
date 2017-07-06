@@ -10,6 +10,14 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_battery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="BatteryView"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/btn_aidl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
