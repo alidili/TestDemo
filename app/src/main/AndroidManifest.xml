@@ -61,6 +61,7 @@
         <activity android:name=".activity.StartAppActivity" />
         <activity android:name=".activity.HandlerActivity" />
         <activity android:name=".activity.BatteryActivity" />
+        <activity android:name=".activity.TimeAxisActivity" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>
