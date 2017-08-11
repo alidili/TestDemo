@@ -6,9 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.yang.testdemo.R;
@@ -18,30 +17,34 @@ import com.yang.testdemo.utils.DensityUtils;
 import java.util.List;
 
 /**
- * 图文选择题
+ * 文字选择题
  * Created by yangle on 2017/8/10.
  */
 
-public class ImageChoiceQuestionAdapter extends RecyclerView.Adapter<ImageChoiceQuestionAdapter.ImageChoiceQuestionViewHolder> {
+public class TextChoiceQuestionAdapter extends RecyclerView.Adapter<TextChoiceQuestionAdapter.TextChoiceQuestionViewHolder> {
 
     private Context context;
     private List<QuestionOption> optionList;
     private OnItemClickListener onItemClickListener;
     private String[] options = {"A", "B", "C", "D", "E", "F"};
+    private int[] optionBgId = {R.drawable.bg_frame_corner_83aff3, R.drawable.bg_frame_corner_eedd94,
+            R.drawable.bg_frame_corner_acd7d6, R.drawable.bg_frame_corner_b5bddd};
+    private int[] optionContentBgId = {R.drawable.bg_dceaff, R.drawable.bg_fff7d4,
+            R.drawable.bg_e2fffe, R.drawable.bg_e5eaff};
 
-    public ImageChoiceQuestionAdapter(Context context, List<QuestionOption> optionList) {
+    public TextChoiceQuestionAdapter(Context context, List<QuestionOption> optionList) {
         this.context = context;
         this.optionList = optionList;
     }
 
     @Override
-    public ImageChoiceQuestionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.adapter_image_choice_question, parent, false);
-        return new ImageChoiceQuestionViewHolder(view);
+    public TextChoiceQuestionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.adapter_text_choice_question, parent, false);
+        return new TextChoiceQuestionViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ImageChoiceQuestionViewHolder holder, int position) {
+    public void onBindViewHolder(final TextChoiceQuestionViewHolder holder, int position) {
         QuestionOption questionOption = optionList.get(position);
 
         holder.tvOption.setText(options[position]);
@@ -53,19 +56,15 @@ public class ImageChoiceQuestionAdapter extends RecyclerView.Adapter<ImageChoice
             ViewGroup.LayoutParams layoutParams = holder.tvOption.getLayoutParams();
             layoutParams.height = DensityUtils.dp2px(context, 162);
             holder.tvOption.setLayoutParams(layoutParams);
-            holder.flOptionContent.setBackgroundResource(R.drawable.bg_frame_83aff3);
-            holder.flOptionContent.setPadding(DensityUtils.dp2px(context, 4), DensityUtils.dp2px(context, 4),
-                    DensityUtils.dp2px(context, 4), DensityUtils.dp2px(context, 4));
+            holder.rlOptionContent.setBackgroundResource(R.drawable.bg_frame_83aff3);
 
         } else {
             holder.tvOption.setTextColor(Color.BLACK);
-            holder.tvOption.setBackgroundResource(R.drawable.bg_frame_corner_bd);
+            holder.tvOption.setBackgroundResource(optionBgId[position % 4]);
             ViewGroup.LayoutParams layoutParams = holder.tvOption.getLayoutParams();
             layoutParams.height = DensityUtils.dp2px(context, 66);
             holder.tvOption.setLayoutParams(layoutParams);
-            holder.flOptionContent.setBackgroundResource(R.drawable.bg_frame_bd);
-            holder.flOptionContent.setPadding(DensityUtils.dp2px(context, 1), DensityUtils.dp2px(context, 1),
-                    DensityUtils.dp2px(context, 1), DensityUtils.dp2px(context, 1));
+            holder.rlOptionContent.setBackgroundResource(optionContentBgId[position % 4]);
         }
 
         // 回调点击事件
@@ -85,20 +84,18 @@ public class ImageChoiceQuestionAdapter extends RecyclerView.Adapter<ImageChoice
         return optionList.size();
     }
 
-    class ImageChoiceQuestionViewHolder extends RecyclerView.ViewHolder {
+    class TextChoiceQuestionViewHolder extends RecyclerView.ViewHolder {
 
         LinearLayout llOption;
         TextView tvOption;
-        FrameLayout flOptionContent;
-        ImageView ivOptionImage;
+        RelativeLayout rlOptionContent;
         TextView tvOptionContent;
 
-        public ImageChoiceQuestionViewHolder(View itemView) {
+        public TextChoiceQuestionViewHolder(View itemView) {
             super(itemView);
             llOption = (LinearLayout) itemView.findViewById(R.id.ll_option);
             tvOption = (TextView) itemView.findViewById(R.id.tv_option);
-            flOptionContent = (FrameLayout) itemView.findViewById(R.id.fl_option_content);
-            ivOptionImage = (ImageView) itemView.findViewById(R.id.iv_option_image);
+            rlOptionContent = (RelativeLayout) itemView.findViewById(R.id.rl_option_content);
             tvOptionContent = (TextView) itemView.findViewById(R.id.tv_option_content);
         }
     }

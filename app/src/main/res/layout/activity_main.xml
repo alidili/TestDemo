@@ -10,6 +10,14 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_text_choice_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TextChoiceQuestion"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/btn_image_choice_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
