@@ -2,8 +2,10 @@ package com.yang.testdemo.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -11,7 +13,10 @@ import android.widget.TextView;
 
 import com.yang.testdemo.R;
 import com.yang.testdemo.bean.QuestionOption;
+import com.yang.testdemo.helper.ItemTouchHelperAdapter;
+import com.yang.testdemo.helper.OnStartDragListener;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -19,15 +24,19 @@ import java.util.List;
  * Created by yangle on 2017/8/10.
  */
 
-public class ChoiceQuestionAdapter extends RecyclerView.Adapter<ChoiceQuestionAdapter.ChoiceQuestionViewHolder> {
+public class ChoiceQuestionAdapter extends RecyclerView.Adapter<ChoiceQuestionAdapter.ChoiceQuestionViewHolder>
+        implements ItemTouchHelperAdapter {
 
     private Context context;
     private List<QuestionOption> optionList;
     private OnItemClickListener onItemClickListener;
+    private OnStartDragListener dragStartListener;
     private String[] options = {"A", "B", "C", "D", "E", "F"};
 
-    public ChoiceQuestionAdapter(Context context, List<QuestionOption> optionList) {
+    public ChoiceQuestionAdapter(Context context, OnStartDragListener dragStartListener,
+                                 List<QuestionOption> optionList) {
         this.context = context;
+        this.dragStartListener = dragStartListener;
         this.optionList = optionList;
     }
 
@@ -61,11 +70,34 @@ public class ChoiceQuestionAdapter extends RecyclerView.Adapter<ChoiceQuestionAd
                 }
             });
         }
+
+        holder.llOption.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
+                    dragStartListener.onStartDrag(holder);
+                }
+                return false;
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return optionList.size();
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        optionList.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    @Override
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        Collections.swap(optionList, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
+        return true;
     }
 
     class ChoiceQuestionViewHolder extends RecyclerView.ViewHolder {
