@@ -27,4 +27,11 @@
     <color name="google_red">#EA4335</color>
     <color name="google_green">#34A853</color>
     <color name="google_yellow">#FBBC05</color>
+
+    <color name="color_black">#000</color>
+    <color name="color_white">#FFF</color>
+    <color name="color_97">#979797</color>
+    <color name="color_4a">#4A4A4A</color>
+    <color name="color_83aff3">#83AFF3</color>
+    <color name="color_bd">#BDBDBD</color>
 </resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="666dp"
+        android:layout_height="464dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="438dp"
+            android:background="@drawable/bg_frame_97"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:text="1. 请大家选择正确的选项"
+                android:textColor="@color/color_4a"
+                android:textSize="18sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_option"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_answer"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="14dp"
+            android:layout_toLeftOf="@+id/btn_commit"
+            android:background="@color/color_83aff3"
+            android:gravity="center"
+            android:text="查看答案"
+            android:textColor="@color/color_white"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_commit"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/color_83aff3"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/color_white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

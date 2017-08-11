@@ -33,7 +33,8 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_time_axis_vertical, R.id.btn_time_axis, R.id.btn_battery,
+    @OnClick({R.id.btn_image_choice_question, R.id.btn_choice_question,
+            R.id.btn_time_axis_vertical, R.id.btn_time_axis, R.id.btn_battery,
             R.id.btn_aidl, R.id.btn_float_window, R.id.btn_handler, R.id.btn_start_app,
             R.id.btn_credit_score, R.id.btn_screen_test, R.id.btn_swipe_to_load_layout,
             R.id.btn_support_library, R.id.btn_circle_progress_bar, R.id.btn_color_track_view,
@@ -48,6 +49,14 @@ public class MainActivity extends BaseActivity {
         Intent intent = null;
 
         switch (view.getId()) {
+            case R.id.btn_image_choice_question:
+                intent = new Intent(this, ImageChoiceQuestionActivity.class);
+                break;
+
+            case R.id.btn_choice_question:
+                intent = new Intent(this, ChoiceQuestionActivity.class);
+                break;
+
             case R.id.btn_time_axis_vertical:
                 intent = new Intent(this, TimeAxisVerticalActivity.class);
                 break;

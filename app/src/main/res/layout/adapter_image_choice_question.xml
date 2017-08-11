@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_option"
+    android:layout_width="match_parent"
+    android:layout_height="162dp"
+    android:clickable="true"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_option"
+        android:layout_width="44dp"
+        android:layout_height="66dp"
+        android:background="@drawable/bg_frame_corner_bd"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/color_black"
+        android:textSize="25sp" />
+
+    <FrameLayout
+        android:id="@+id/fl_option_content"
+        android:layout_width="248dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_frame_bd"
+        android:padding="1dp">
+
+        <ImageView
+            android:id="@+id/iv_option_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/rabbit" />
+
+        <TextView
+            android:id="@+id/tv_option_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:alpha="0.5"
+            android:background="@color/color_black"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="8dp"
+            android:text="乌鸦放满了石子一只乌鸦口渴了,到处找水喝"
+            android:textColor="@color/color_white"
+            android:textSize="15sp" />
+
+    </FrameLayout>
+
+</LinearLayout>

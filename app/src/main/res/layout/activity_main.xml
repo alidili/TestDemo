@@ -10,6 +10,22 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_image_choice_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ImageChoiceQuestion"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_choice_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ChoiceQuestion"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/btn_time_axis_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
