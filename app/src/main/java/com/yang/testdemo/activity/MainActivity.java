@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_fill_blank_question,
+    @OnClick({R.id.btn_drag, R.id.btn_span_flag, R.id.btn_fill_blank_question,
             R.id.btn_text_choice_question, R.id.btn_image_choice_question, R.id.btn_choice_question,
             R.id.btn_time_axis_vertical, R.id.btn_time_axis, R.id.btn_battery,
             R.id.btn_aidl, R.id.btn_float_window, R.id.btn_handler, R.id.btn_start_app,
@@ -50,6 +50,14 @@ public class MainActivity extends BaseActivity {
         Intent intent = null;
 
         switch (view.getId()) {
+            case R.id.btn_drag:
+                intent = new Intent(this, DragActivity.class);
+                break;
+
+            case R.id.btn_span_flag:
+                intent = new Intent(this, SpanFlagActivity.class);
+                break;
+
             case R.id.btn_fill_blank_question:
                 intent = new Intent(this, FillBlankQuestionActivity.class);
                 break;

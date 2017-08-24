@@ -67,6 +67,8 @@
         <activity android:name=".activity.ImageChoiceQuestionActivity" />
         <activity android:name=".activity.TextChoiceQuestionActivity" />
         <activity android:name=".activity.FillBlankQuestionActivity" />
+        <activity android:name=".activity.SpanFlagActivity" />
+        <activity android:name=".activity.DragActivity" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>
