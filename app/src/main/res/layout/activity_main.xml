@@ -10,6 +10,14 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_drag_fill_blank_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="DragFillBlankQuestion"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/btn_drag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -93,7 +93,7 @@ public class DragActivity extends BaseActivity {
                 final int action = event.getAction();
                 switch (action) {
                     case DragEvent.ACTION_DRAG_STARTED:
-                        //拖拽开始事件
+                        // 拖拽开始事件
                         if (event.getClipDescription().hasMimeType(
                                 ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                             return true;
@@ -101,7 +101,7 @@ public class DragActivity extends BaseActivity {
                         return false;
 
                     case DragEvent.ACTION_DRAG_ENTERED:
-                        //被拖放View进入目标View
+                        // 被拖放View进入目标View
                         llContainer.setBackgroundColor(Color.YELLOW);
                         return true;
 
@@ -110,20 +110,20 @@ public class DragActivity extends BaseActivity {
                         return true;
 
                     case DragEvent.ACTION_DRAG_EXITED:
-                        //被拖放View离开目标View
+                        // 被拖放View离开目标View
                         llContainer.setBackgroundColor(Color.BLUE);
                         tvTip.setText("");
                         return true;
 
                     case DragEvent.ACTION_DROP:
-                        //释放拖放阴影，并获取移动数据
+                        // 释放拖放阴影，并获取移动数据
                         ClipData.Item item = event.getClipData().getItemAt(0);
                         String dragData = item.getText().toString();
                         tvTip.setText(dragData + event.getY() + ":" + event.getX());
                         return true;
 
                     case DragEvent.ACTION_DRAG_ENDED:
-                        //拖放事件完成
+                        // 拖放事件完成
                         return true;
 
                     default:
