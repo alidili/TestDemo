@@ -180,7 +180,7 @@ public class DragFillBlankQuestionActivity extends BaseActivity {
                         tvContent.setText(spannableStringBuilder);
 
                         // 添加答案
-                        answerList.add(position, answer);
+                        answerList.set(position, answer);
 
                         for (int i = 0; i < rangeList.size(); i++) {
                             if (i > position) {
