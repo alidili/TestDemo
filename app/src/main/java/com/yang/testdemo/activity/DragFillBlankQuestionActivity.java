@@ -40,10 +40,10 @@ public class DragFillBlankQuestionActivity extends BaseActivity {
     @Bind(R.id.rl_container)
     RelativeLayout rlContainer;
 
-    // 答案范围集合
-    private List<Range> rangeList;
     // 答案集合
     private List<String> answerList;
+    // 答案范围集合
+    private List<Range> rangeList;
     private SpannableStringBuilder spannableStringBuilder;
 
     @Override
@@ -56,18 +56,21 @@ public class DragFillBlankQuestionActivity extends BaseActivity {
     }
 
     private void init() {
+        String content = "纷纷扬扬的_____下了半尺多厚。天地间_____的一片。我顺着_____工地走了四十多公里，只听见各种机器的吼声，可是看不见人影，也看不见工点。一进灵官峡，我就心里发慌。";
+        spannableStringBuilder = new SpannableStringBuilder(content);
+
+        // 答案范围集合
         rangeList = new ArrayList<>();
         rangeList.add(new Range(5, 10));
         rangeList.add(new Range(20, 25));
         rangeList.add(new Range(32, 37));
 
+        // 答案集合
         answerList = new ArrayList<>();
         for (int i = 0; i < rangeList.size(); i++) {
             answerList.add("");
         }
 
-        String content = "纷纷扬扬的_____下了半尺多厚。天地间_____的一片。我顺着_____工地走了四十多公里，只听见各种机器的吼声，可是看不见人影，也看不见工点。一进灵官峡，我就心里发慌。";
-        spannableStringBuilder = new SpannableStringBuilder(content);
         tvContent.setText(spannableStringBuilder);
 
         btnAnswer1.setOnLongClickListener(new View.OnLongClickListener() {
@@ -99,34 +102,31 @@ public class DragFillBlankQuestionActivity extends BaseActivity {
             public boolean onDrag(View v, DragEvent event) {
                 final int action = event.getAction();
                 switch (action) {
-                    case DragEvent.ACTION_DRAG_STARTED: // 拖拽开始事件
+                    case DragEvent.ACTION_DRAG_STARTED: // 拖拽开始
                         Log.i("ACTION_DRAG_STARTED", "x:" + event.getX() + "___y:" + event.getY());
                         if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                             return true;
                         }
                         return false;
 
-                    case DragEvent.ACTION_DRAG_ENTERED: // 被拖放View进入目标View
+                    case DragEvent.ACTION_DRAG_ENTERED: // 被拖拽View进入目标区域
                         Log.i("ACTION_DRAG_ENTERED", "x:" + event.getX() + "___y:" + event.getY());
                         return true;
 
-                    case DragEvent.ACTION_DRAG_LOCATION:
+                    case DragEvent.ACTION_DRAG_LOCATION: // 被拖拽View在目标区域移动
                         Log.i("ACTION_DRAG_LOCATION", "x:" + event.getX() + "___y:" + event.getY());
                         return true;
 
-                    case DragEvent.ACTION_DRAG_EXITED: // 被拖放View离开目标View
+                    case DragEvent.ACTION_DRAG_EXITED: // 被拖拽View离开目标区域
                         Log.i("ACTION_DRAG_EXITED", "x:" + event.getX() + "___y:" + event.getY());
                         return true;
 
-                    case DragEvent.ACTION_DROP:
+                    case DragEvent.ACTION_DROP: // 放开被拖拽View
                         Log.i("ACTION_DROP", "x:" + event.getX() + "___y:" + event.getY());
                         int position = 0;
 
                         // 获取TextView的Layout对象
                         Layout layout = tvContent.getLayout();
-                        Rect bound = new Rect();
-                        int line = layout.getLineForOffset(position);
-                        layout.getLineBounds(line, bound);
 
                         // 当前x、y坐标
                         float currentX = event.getX();
@@ -137,6 +137,12 @@ public class DragFillBlankQuestionActivity extends BaseActivity {
 
                         for (int i = 0; i < rangeList.size(); i++) {
                             Range range = rangeList.get(i);
+
+                            // 获取TextView中字符坐标
+                            Rect bound = new Rect();
+                            int line = layout.getLineForOffset(range.start);
+                            layout.getLineBounds(line, bound);
+
                             // 字符顶部y坐标
                             int yAxisTop = bound.top;
                             // 字符底部y坐标
@@ -207,7 +213,7 @@ public class DragFillBlankQuestionActivity extends BaseActivity {
                         }
                         return true;
 
-                    case DragEvent.ACTION_DRAG_ENDED: // 拖放事件完成
+                    case DragEvent.ACTION_DRAG_ENDED: // 拖拽完成
                         Log.i("ACTION_DRAG_ENDED", "x:" + event.getX() + "___y:" + event.getY());
                         return true;
 
