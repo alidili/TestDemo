@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="10dp"
+            android:text="纷纷扬扬的大雪下了半尺多厚。天地间雾蒙蒙的一片。我顺着铁路工地走了四十多公里，只听见各种机器的吼声，可是看不见人影，也看不见工点。一进灵官峡，我就心里发慌。这山峡，天晴的日子，也成天不见太阳；顺着弯曲的运输便道走去，随便你什么时候仰面看，只能看见巴掌大的一块天。目下，这里，卷着雪片的狂风，把人团团围住，真是寸步难行！但是，最近这里工作很紧张，到处都是冒着风雪劳动的人。发电机、卷扬机、混凝土搅拌机和空气压缩机的吼声，震荡山谷。点点昏黄的火球，就是那无数的电灯。看不清天空里蛛网似的电线；只见运材料的铁斗子，顺着架在山腰里的高架索道，来回运转。
+我走到一座山崖下边，想找个避风的地方蹲上一阵，等天明了再赶到材料厂去。
+抬头看，一条小路通到绝壁上的石洞里。石洞门口还挂着布帘子。无疑，这里住着工人。我抓住树枝爬上去，钻进石洞。奇怪！石洞门口有个小孩，看来不过七八岁。他坐在小板凳上，两个肘子支在膝盖上，两只手掌托住冻得发红的脸蛋，从帘子缝里傻呵呵地向外望着对面的绝壁。我进来，他看了一眼，又朝外望着。"
+            android:textSize="50sp" />
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/ll_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+</LinearLayout>

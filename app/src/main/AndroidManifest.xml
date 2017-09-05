@@ -70,6 +70,7 @@
         <activity android:name=".activity.SpanFlagActivity" />
         <activity android:name=".activity.DragActivity" />
         <activity android:name=".activity.DragFillBlankQuestionActivity" />
+        <activity android:name=".activity.ScrollViewActivity" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>
