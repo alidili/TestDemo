@@ -20,8 +20,15 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
+ * 主页
  * Created by yangle on 2016/3/28.
+ * <p>
+ * Website：http://www.yangle.tech
+ * GitHub：https://github.com/alidili
+ * CSDN：http://blog.csdn.net/kong_gu_you_lan
+ * JianShu：http://www.jianshu.com/u/34ece31cd6eb
  */
+
 public class MainActivity extends BaseActivity {
 
     private final String TAG = "MainActivity";
@@ -33,7 +40,8 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_xstream, R.id.btn_scroll_view, R.id.btn_drag_fill_blank_question,
+    @OnClick({R.id.btn_spannable_string,
+            R.id.btn_xstream, R.id.btn_scroll_view, R.id.btn_drag_fill_blank_question,
             R.id.btn_drag, R.id.btn_span_flag, R.id.btn_fill_blank_question,
             R.id.btn_text_choice_question, R.id.btn_image_choice_question, R.id.btn_choice_question,
             R.id.btn_time_axis_vertical, R.id.btn_time_axis, R.id.btn_battery,
@@ -51,6 +59,10 @@ public class MainActivity extends BaseActivity {
         Intent intent = null;
 
         switch (view.getId()) {
+            case R.id.btn_spannable_string:
+                intent = new Intent(this, SpannableStringActivity.class);
+                break;
+
             case R.id.btn_xstream:
                 intent = new Intent(this, XStreamActivity.class);
                 break;

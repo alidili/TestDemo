@@ -43,4 +43,5 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.lsjwzh:materialloadingprogressbar:0.5.8-RELEASE'
     compile files('libs/xstream-1.4.7.jar')
+    compile 'com.github.alidili:CommUtils:v1.0'
 }

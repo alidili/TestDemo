@@ -72,6 +72,7 @@
         <activity android:name=".activity.DragFillBlankQuestionActivity" />
         <activity android:name=".activity.ScrollViewActivity" />
         <activity android:name=".activity.XStreamActivity" />
+        <activity android:name=".activity.SpannableStringActivity" />
 
         <receiver android:name=".broadcast.NetworkChangeReceiver">
             <intent-filter>

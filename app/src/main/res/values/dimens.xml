@@ -32,4 +32,6 @@
     <!-- jd -->
     <dimen name="refresh_header_height_jd">100dp</dimen>
 
+    <dimen name="dp_10">5dp</dimen>
+
 </resources>
