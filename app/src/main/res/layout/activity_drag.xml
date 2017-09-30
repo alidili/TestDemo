@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rl_top_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/iv_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
-        android:contentDescription="@null" />
+        android:clickable="true"
+        android:src="@mipmap/ic_launcher" />
 
-    <LinearLayout
-        android:id="@+id/ll_container"
+    <RelativeLayout
+        android:id="@+id/rl_container"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="250dp"
         android:layout_alignParentBottom="true"
-        android:background="#cccccc"
-        android:orientation="vertical">
+        android:background="@color/colorPrimary">
 
         <TextView
             android:id="@+id/tv_tip"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ff0000"
+            android:layout_centerInParent="true"
+            android:text="目标区域"
+            android:textColor="@color/color_white"
             android:textSize="18sp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
