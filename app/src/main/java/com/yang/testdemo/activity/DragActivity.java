@@ -34,6 +34,7 @@ public class DragActivity extends BaseActivity implements View.OnDragListener {
         setContentView(R.layout.activity_drag);
         ButterKnife.bind(this);
 
+        // 目标区域设置拖拽事件监听
         rlContainer.setOnDragListener(this);
     }
 
@@ -68,7 +69,7 @@ public class DragActivity extends BaseActivity implements View.OnDragListener {
 
             case DragEvent.ACTION_DROP: // 放开被拖拽View
                 Log.i("拖拽事件", "放开被拖拽View");
-                // 释放拖放阴影，并获取移动数据
+                // 释放拖拽阴影，并获取移动数据
                 ClipData.Item item = event.getClipData().getItemAt(0);
                 String content = item.getText().toString();
                 Toast.makeText(this, content, Toast.LENGTH_SHORT).show();
